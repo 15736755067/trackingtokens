@@ -14,7 +14,7 @@ def hello_world():
 
 @app.route("/<string:key>/", methods=["GET", "POST"])
 def detail(key):
-    print(key)
+    # print(key)
     if key == 'favicon.ico':
         return ""
     elif key == 'recommended-affiliate-networks':
@@ -24,7 +24,7 @@ def detail(key):
     elif key == 'what-is-a-token':
         return render_template('is_token.html')
     ret = get_info.get_detailinfo(key)
-    print(ret)
+    # print(ret)
     minititle = ret[0][0]
     title = ret[0][1]
     macros_num = ret[0][2]
@@ -43,4 +43,4 @@ def detail(key):
 
 
 if __name__ == '__main__':
-    app.run(port=8088, host='0.0.0.0')
+    app.run(port=8081, host='0.0.0.0')
